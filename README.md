@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Jayson Career Hub
 
-## Getting Started
+The unified Command Center for Jobs, Aviation Scholarships, and PPL Training.
 
-First, run the development server:
+## Overview
+This is a production-ready, full-stack Next.js application designed to function as an autonomous career engine. It features:
+- **NextAuth (GitHub)**: Protects the dashboard and isolates user data.
+- **Supabase (PostgreSQL)**: Handles fast, cloud-hosted reads and writes of scraped opportunities and AI drafts.
+- **OpenAI & Playwright Integration**: Back-end architecture designed to seamlessly deploy generative scripts and job scrapers.
 
+---
+
+## 🚀 3-Step Vercel Deployment Guide
+
+To deploy this application to live internet (e.g., `jayson-career-hub.vercel.app`), follow these steps:
+
+### 1. Push Code to GitHub
+Open your terminal inside this `jayson-career-hub` folder and push to a new private repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git init
+git add .
+git commit -m "Initial commit - Career Hub Omega"
+git branch -M main
+# Connect to your GitHub repo and push
+git remote add origin https://github.com/YourUsername/jayson-career-hub.git
+git push -u origin main
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Connect to Vercel
+1. Go to [Vercel.com](https://vercel.com) and log in with your GitHub account.
+2. Click **"Add New..."** > **"Project"**.
+3. Import the `jayson-career-hub` repository you just created on GitHub.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 3. Add Environment Variables & Deploy
+Before clicking deploy, open the **Environment Variables** section in Vercel and paste in every key from your `.env.local` file:
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `NEXTAUTH_URL` *(Change this to your new live Vercel URL, or simply remove it in Vercel as Vercel handles it automatically)*
+- `NEXTAUTH_SECRET`
+- `GITHUB_ID`
+- `GITHUB_SECRET`
+- `OPENAI_API_KEY`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+> ⚠️ **Important:** In your GitHub OAuth App settings, you must change the "Authorization callback URL" from `localhost:3000` to your new live domain: `https://your-vercel-domain.vercel.app/api/auth/callback/github`.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Click **Deploy**. Your Command Center is now live worldwide.

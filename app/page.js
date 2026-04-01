@@ -1,66 +1,56 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-
-export default function Home() {
+export default function CommandCenter() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="animate-fade-in">
+      <h1>Command Center</h1>
+      <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>
+        Overview of your autonomous opportunity engines and training progress.
+      </p>
+
+      <div className="metric-grid">
+        <div className="glass-panel">
+          <h3>Active Leads (24h)</h3>
+          <div className="metric-value" style={{ color: 'var(--accent-blue)' }}>12</div>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginTop: '0.5rem' }}>
+            New remote tech jobs and local FBO roles found.
           </p>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="glass-panel">
+          <h3>Targeted Funding</h3>
+          <div className="metric-value" style={{ color: 'var(--accent-amber)' }}>$26,000</div>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginTop: '0.5rem' }}>
+            Available scholarship pool in 2026.
+          </p>
         </div>
-      </main>
+
+        <div className="glass-panel">
+          <h3>PPL Flight Hours</h3>
+          <div className="metric-value" style={{ color: 'var(--accent-green)' }}>1.5 / 40</div>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginTop: '0.5rem' }}>
+            Track total flight time towards checkride.
+          </p>
+        </div>
+      </div>
+
+      <div className="glass-panel">
+        <h2>Recent System Activity</h2>
+        <div className="item-list" style={{ marginTop: '1.5rem' }}>
+          <div className="item-card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div>
+              <div style={{ fontWeight: 500 }}>AI Draft Generated</div>
+              <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Arlington Air Center Walk-In Script</div>
+            </div>
+            <span style={{ color: 'var(--accent-blue)', fontSize: '0.85rem' }}>10m ago</span>
+          </div>
+          <div className="item-card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div>
+              <div style={{ fontWeight: 500 }}>Scholarship Sniper Complete</div>
+              <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Found 3 active 2026 aviation grants</div>
+            </div>
+            <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>1h ago</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
